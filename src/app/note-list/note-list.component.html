@@ -25,6 +25,8 @@
        </div>
     </div>
     <div>
-        <app-note *ngFor="let note of getList()" titel = 'note'></app-note>
+        <div *ngIf="status == 'notes'"><app-note  *ngFor="let note of getList()" [note] = "note"></app-note></div>
+        <div *ngIf="status == 'trash'"><app-note  *ngFor="let note of getTrashList()" [note] = "note"></app-note></div>
+        
     </div>
 </div>
